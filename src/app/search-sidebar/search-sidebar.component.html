@@ -1,28 +1,23 @@
 <div class="app-search-sidebar">
+
 	<button type="submit">Oneway</button>
 	<button type="submit">Return</button>
 	<div class="row">
-	<input type="text" name="" placeholder="Origin">
-		
+		<input type="text" name="" [(ngModel)]="searchForm.origin" placeholder="Origin">
 	</div>
 	<div class="row">
-		
-	<input type="text" name="" placeholder="Destination">
+		<input type="text" name="" [(ngModel)]="searchForm.destination" placeholder="Destination">
 	</div>
 	<div class="row">
-	<input type="date" name="" placeholder="">
-		
+		<input type="date" name="" [(ngModel)]="searchForm.departure_date" placeholder="">
 	</div>
 	<div class="row">
-	<input type="date" name="" placeholder="">
-		
+		<input type="date" name=""  [(ngModel)]="searchForm.return_date "placeholder="">
 	</div>
 	<div class="row">
-		
+		<input type="number" name="" [(ngModel)]="searchForm.no_of_passengers" placeholder="Passenger">
 	</div>
-	<div class="row">
-	<input type="number" name="" placeholder="Passenger">
-		
-	</div>
-<app-filter></app-filter>
+	<button type="submit" (click)="search()">Search</button>
+
+	<app-filter></app-filter>
 </div>
