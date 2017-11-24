@@ -1,0 +1,6 @@
+.app-search-sidebar{
+	border: 1px solid #eee;
+	position: sticky;
+	position: -webkit-sticky;
+	top:56px;
+}
