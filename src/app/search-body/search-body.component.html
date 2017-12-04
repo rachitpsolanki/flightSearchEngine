@@ -1,8 +1,3 @@
 <div class="app-search-body"> 
-<app-search-item></app-search-item>
-<app-search-item></app-search-item>
-<app-search-item></app-search-item>
-<app-search-item></app-search-item>
-<app-search-item></app-search-item>
-<app-search-item></app-search-item>
+<app-search-item *ngFor="let item of searchResult" [flight]="item"></app-search-item>
 </div>

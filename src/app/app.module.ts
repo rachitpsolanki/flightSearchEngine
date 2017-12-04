@@ -10,6 +10,8 @@ import { SearchSidebarComponent } from './search-sidebar/search-sidebar.componen
 import { SearchItemComponent } from './search-item/search-item.component';
 import { FilterComponent } from './filter/filter.component';
 
+import { SearchService } from './search.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,7 @@ import { FilterComponent } from './filter/filter.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

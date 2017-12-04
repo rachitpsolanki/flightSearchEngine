@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
+
 
 @Component({
   selector: 'app-search-sidebar',
@@ -7,21 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchSidebarComponent implements OnInit {
 
-  private searchForm:object={
-  	origin:'',
-  	destination:'',
-  	departure_date:'',
-  	return_date:'',
-  	no_of_passengers:0
+
+  constructor(private searchSVC:SearchService) {
   }
 
-  constructor() { }
-
+  private searchForm = this.searchSVC.searchForm;
+  
   ngOnInit() {
   }
-
   search(){
-  	console.log(this.searchForm);
+    this.searchSVC.getFlights();
   }
 
 
