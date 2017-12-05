@@ -1,9 +1,33 @@
 .app-header-body{
- min-height:100%;
-  min-width:100%;
-  background-color:red;
-}
+	height:100%;
+	min-width:100%;
+	padding-top: 56px;
+	overflow: hidden;
+	background-image: url('../../assets/banner-flight.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
+	-webkit-transition: all .25s linear;
+	-moz-transition: all .25s linear;
+	-ms-transition: all .25s linear;
+	-o-transition: all .25s linear;
+	transition: all .25s linear;
+}
+.app-header-body>.grid{
+	height: 100%;
+
+}
+.app-header-body > .grid> .row{
+	margin: auto 0% ;
+	padding: 20px;
+	justify-content: center;
+}
+.row>.row-search-items{
+	width: 100%;
+	float: left;
+	max-width: 200px;
+}
 .body-title{
 	font-family: sans-serif;
 	line-height: 250px;
@@ -15,8 +39,7 @@
 	width: 100%;
 	height: 56px;
 	background-color: #eee;
-	position: sticky;
-	position: -webkit-sticky;
+	position: fixed;
 	top:0px;
 	z-index: 1;
 

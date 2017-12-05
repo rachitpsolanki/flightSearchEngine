@@ -1,4 +1,6 @@
 .app-search-body{	
 border: 1px solid #eee;
-height: 800px;
+/*height: 800px;*/
+height: 100%;
+overflow: scroll;
 }

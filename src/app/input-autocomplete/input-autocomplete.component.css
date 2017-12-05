@@ -1,0 +1,16 @@
+.autocomplete{
+	position: absolute;
+	max-height: 100px;
+	background:white;
+	overflow: scroll;
+	border: 1px solid grey;
+	z-index: 10;
+}
+input{
+	width: 100%;
+}
+.autocomplete>ul{
+	margin: 0px;
+	padding: 5px;
+
+}

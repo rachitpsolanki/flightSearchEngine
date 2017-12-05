@@ -1,21 +1,14 @@
-<div style="" class="app-header-body">
+<div class="app-header-body" id="app-header-body">
 	<div class="grid">
 		<div class="row" >
-			<div col-3>
-				<input type="text"  name="" [(ngModel)]="searchForm.origin" placeholder="Origin">
-			</div>
-			<div col-3>
-				<input type="text"  name="" [(ngModel)]="searchForm.destination" placeholder="Destination">
-			</div>
-			<div col-3>
-				<input type="date"   name="" [(ngModel)]="searchForm.departure_date" placeholder="">
-			</div>
-			<div col-3>
-				<button type="submit" (click)="search()">Search</button>
-			</div>
+			<app-input-autocomplete class="row-search-items" placeholder="Source" [autocomplete]="airports" [value]="searchForm.source" (inputChange)="searchForm.source=$event" ></app-input-autocomplete>
+			<app-input-autocomplete class="row-search-items"  placeholder="Destination" [autocomplete]="airports" [value]="searchForm.destination" (inputChange)="searchForm.destination=$event" ></app-input-autocomplete>
+			<input type="date"   class="row-search-items" name="" [(ngModel)]="searchForm.departure_date" placeholder="">
+			<button type="submit"  class="row-search-items" (click)="search()">Search</button>
 		</div>	
 	</div>
 </div>
 <div class="app-header">
-	<p no-margin class="header-title">Flight Search Engine</p>
+	<p no-margin class="header-title" (click)="reset()">Flight Search Engine</p>
+	<!-- <button type="" (click)="reset()" >Reset</button> -->
 </div>

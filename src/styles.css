@@ -4,6 +4,11 @@ html, body {
   margin: 0;
 }
 
+input{
+  padding: 5px;
+  margin: 0px;
+}
+
 [no-margin]{
   margin:0px;
 }

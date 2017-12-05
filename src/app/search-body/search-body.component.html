@@ -1,3 +1,11 @@
 <div class="app-search-body"> 
-<app-search-item *ngFor="let item of searchResult" [flight]="item"></app-search-item>
+	<div class="row">
+		<div col> 
+			<app-search-item *ngFor="let single of searchResult.single" [flight]="single"></app-search-item>
+			
+		</div>
+		<div col>
+			<app-search-item *ngFor="let return of searchResult.return" [flight]="return"></app-search-item>
+		</div>
+	</div>
 </div>

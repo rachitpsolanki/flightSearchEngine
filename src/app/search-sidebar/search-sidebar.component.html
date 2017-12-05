@@ -1,10 +1,10 @@
 <div class="app-search-sidebar">
 
 	<div class="row">
-		<input type="text" name="" [(ngModel)]="searchForm.origin" placeholder="Origin">
+		<app-input-autocomplete placeholder="Source" [autocomplete]="airports" [value]="searchForm.source" (inputChange)="searchForm.source=$event" ></app-input-autocomplete>
 	</div>
 	<div class="row">
-		<input type="text" name="" [(ngModel)]="searchForm.destination" placeholder="Destination">
+		<app-input-autocomplete placeholder="Destination" [autocomplete]="airports" [value]="searchForm.destination" (inputChange)="searchForm.destination=$event" ></app-input-autocomplete>
 	</div>
 	<div class="row">
 		<input type="date" name="" [(ngModel)]="searchForm.departure_date" placeholder="">
@@ -18,5 +18,5 @@
 	</div>
 	<button type="submit" (click)="search()">Search</button>
 
-	<app-filter></app-filter>
+	<app-filter [min]="min" [max]="max" ></app-filter>
 </div>

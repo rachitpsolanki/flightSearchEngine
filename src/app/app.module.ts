@@ -11,6 +11,7 @@ import { SearchItemComponent } from './search-item/search-item.component';
 import { FilterComponent } from './filter/filter.component';
 
 import { SearchService } from './search.service';
+import { InputAutocompleteComponent } from './input-autocomplete/input-autocomplete.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SearchService } from './search.service';
     SearchBodyComponent,
     SearchSidebarComponent,
     SearchItemComponent,
-    FilterComponent
+    FilterComponent,
+    InputAutocompleteComponent
   ],
   imports: [
     BrowserModule,

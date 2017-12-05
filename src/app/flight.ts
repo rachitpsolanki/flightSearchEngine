@@ -4,9 +4,11 @@ export class Routes {
 	airline_id:number; // Unique OpenFlights identifier for airline (see Airline).
 	source_airport:string;	//3-letter (IATA) or 4-letter (ICAO) code of the source airport.
 	source_airport_id:number;//	Unique OpenFlights identifier for source airport (see Airport)
-	Destination_airport:string;	//3-letter (IATA) or 4-letter (ICAO) code of the destination airport.
-	Destination_airport_id:number; // Unique OpenFlights identifier for destination airport (see Airport)
-	stops:number;
+	source_airport_code:string;
+	destination_airport:string;	//3-letter (IATA) or 4-letter (ICAO) code of the destination airport.
+	destination_airport_id:number; // Unique OpenFlights identifier for destination airport (see Airport)
+	destination_airport_code:string;
+	price:number;
 }
 
 export class Flight {
@@ -15,3 +17,16 @@ export class Flight {
 	rating:number;
 }
 
+export class airport{
+	airport: string;
+	airport_id: number;
+	airport_code: string;
+}
+
+export class SearchForm{
+	source:airport;
+	destination:airport;
+	departure_date:string;
+	return_date:string;
+	no_of_passengers:number;
+};
