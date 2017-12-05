@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs'
-import { Routes,SearchForm} from './flight';
+import { Routes,SearchForm} from './classLIB';
 import { flights,airports } from './mock-flight-data';
 
 

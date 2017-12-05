@@ -1,5 +1,4 @@
 import { Component, OnInit,Input } from '@angular/core';
-import {Routes} from '../flight'
 
 @Component({
   selector: 'app-search-item',
@@ -8,7 +7,7 @@ import {Routes} from '../flight'
 })
 
 export class SearchItemComponent implements OnInit {
-	@Input() flight:Routes;
+	@Input() flight;
   
   constructor() {
    }

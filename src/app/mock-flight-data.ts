@@ -1,4 +1,4 @@
-import { Routes } from './flight';
+import { Routes } from './classLIB';
 
 export const flights : Routes[] = [
   {
