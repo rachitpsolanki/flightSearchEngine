@@ -1,6 +1,6 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { SearchService } from '../search.service';
-import { Routes } from '../flight';
+
 @Component({
   selector: 'app-search-body',
   templateUrl: './search-body.component.html',
@@ -8,7 +8,7 @@ import { Routes } from '../flight';
 })
 export class SearchBodyComponent implements OnInit {
   
-  private searchResult=this.searchSVC.searchResult;
+  @Input() searchResult;
 
   constructor(private searchSVC:SearchService) {}
 

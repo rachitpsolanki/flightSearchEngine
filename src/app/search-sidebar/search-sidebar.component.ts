@@ -8,23 +8,33 @@ import { SearchService } from '../search.service';
   styleUrls: ['./search-sidebar.component.css']
 })
 export class SearchSidebarComponent implements OnInit {
+  airports;
+  searchForm;
+  min;
+  max;
 
-  constructor(private searchSVC:SearchService) {
-  }
+  constructor(private searchSVC:SearchService) {}  
 
-  private airports=this.searchSVC.airports;
-  private searchForm = this.searchSVC.searchForm;
-  private min = this.searchSVC.minFlightFare;
-  private max = this.searchSVC.maxFlightFare;
-  
   ngOnInit() {
+    this.airports=this.searchSVC.airports;
+    this.searchForm = this.searchSVC.searchForm;
+    this.min = this.searchSVC.minFlightFare;
+    this.max = this.searchSVC.maxFlightFare;
   }
+
+  valueChanged(e){
+    this.searchSVC.fareFilter(e);
+    this.ngOnInit();
+    
+  }
+
   search(){
     this.searchSVC.getFlights();
+    this.ngOnInit();
   }
+
   captureEvent(e){
     console.log(e)
   }
-
 
 }

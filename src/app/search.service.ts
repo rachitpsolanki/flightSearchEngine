@@ -24,8 +24,8 @@ export class SearchService {
 		no_of_passengers:1
 	};
 
-	searchResult:{single:Routes[],return:Routes[]} ={single:[],return:[]};
-	
+	public searchResult:{single:Routes[],return:Routes[]} ={single:[],return:[]};
+	private searchvalue;
 	minFlightFare:number;
 	maxFlightFare:number;
 	
@@ -41,36 +41,41 @@ export class SearchService {
 		if(this.searchForm.return_date){
 			this.searchResult.return = this.flightFilter(this.searchForm.destination.airport_id,this.searchForm.source.airport_id);
 		}
-		console.log(this.searchResult);		
 		this.calculateMinMaxFares();
-		console.log(this.maxFlightFare,this.minFlightFare);
+		this.searchvalue=JSON.stringify(this.searchResult);	
 		return this.searchResult;
 	}
 	
-	calculateMinMaxFares(){
-
-		let maxSingle = 0 ,minSingle = 0,maxReturn= 0,minReturn = 0; 
-		console.log( maxSingle,minSingle,maxReturn,minReturn);
-		minSingle= Math.min.apply(Math,this.searchResult.single.map(function(o){return o.price;}));
-		maxSingle = Math.max.apply(Math,this.searchResult.single.map(function(o){return o.price;}));
-
-		if(this.searchForm.return_date){
-			minReturn = Math.min.apply(Math,this.searchResult.return.map(function(o){return o.price;}));
-			maxReturn = Math.max.apply(Math,this.searchResult.return.map(function(o){return o.price;}));
-		}
-		this.minFlightFare = minSingle + minReturn;
-		this.maxFlightFare = maxSingle + maxReturn;
-		console.log( maxSingle,minSingle,maxReturn,minReturn);
-		
-
-	}
-
 	flightFilter(source_id,destination_id){
+
 		let flightstofilter = flights;
 		let flightArray = flightstofilter.filter(flight=>{
 			return ( source_id == flight.source_airport_id) && (destination_id == flight.destination_airport_id);
 		});
 		return flightArray;
+	}
+
+	calculateMinMaxFares(){
+
+		let minMaxFares=[]; 
+		minMaxFares.push(Math.min.apply(Math,this.searchResult.single.map(function(o){return o.price;})));
+		minMaxFares.push(Math.max.apply(Math,this.searchResult.single.map(function(o){return o.price;})));
+
+		if(this.searchForm.return_date){
+			minMaxFares.push(Math.min.apply(Math,this.searchResult.return.map(function(o){return o.price;})));
+			minMaxFares.push(Math.max.apply(Math,this.searchResult.return.map(function(o){return o.price;})));
+		}
+
+		this.minFlightFare = Math.min.apply(Math,minMaxFares);
+		this.maxFlightFare = Math.max.apply(Math,minMaxFares);
+	}
+	
+	fareFilter(fare){
+
+		let filterResult =JSON.parse(this.searchvalue);
+		filterResult.single = filterResult.single.filter(res=>{return res.price<=fare});
+		filterResult.return= filterResult.return.filter(res=>{return res.price<=fare});
+		this.searchResult = filterResult;
 	}
 
 }

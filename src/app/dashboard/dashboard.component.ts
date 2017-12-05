@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../search.service';
 
 @Component({
 	selector: 'app-dashboard',
@@ -7,11 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-	showSearchDashboard:boolean=false
-	constructor() { }
+	showSearchDashboard:boolean=false;
+ 	 constructor(private searchSVC:SearchService) {}
+
 	onSearch(e){
 		this.showSearchDashboard=true;
 	}
+	
 	ngOnInit() {
 	}
 

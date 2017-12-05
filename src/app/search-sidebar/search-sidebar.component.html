@@ -18,5 +18,5 @@
 	</div>
 	<button type="submit" (click)="search()">Search</button>
 
-	<app-filter [min]="min" [max]="max" ></app-filter>
+	<app-filter [min]="min" [max]="max" (valueChanged)="valueChanged($event)"></app-filter>
 </div>

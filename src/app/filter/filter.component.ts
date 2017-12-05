@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input,Output} from '@angular/core';
+import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 
 
 @Component({
@@ -11,14 +11,15 @@ export class FilterComponent implements OnInit {
   	constructor() {}
 	@Input() min;
 	@Input() max;
-	
-	value=10;
+	@Output() valueChanged:EventEmitter<number>=new EventEmitter<number>();
+	value;
 
 	ngOnInit() {
+	this.value=this.max;
 	}
 
 	chnageFilter(){
-		// console.log(this.value);
+		this.valueChanged.emit(this.value);
 	}
 
 }

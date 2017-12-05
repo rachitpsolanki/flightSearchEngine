@@ -1,8 +1,7 @@
 <div class="app-search-body"> 
 	<div class="row">
 		<div col> 
-			<app-search-item *ngFor="let single of searchResult.single" [flight]="single"></app-search-item>
-			
+			<app-search-item *ngFor="let single of searchResult.single" [flight]="single"></app-search-item>	
 		</div>
 		<div col>
 			<app-search-item *ngFor="let return of searchResult.return" [flight]="return"></app-search-item>
