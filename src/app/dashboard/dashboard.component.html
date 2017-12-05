@@ -1,13 +1,11 @@
 <app-header (searchEvent)="onSearch($event)"></app-header>	
 <div class="app-content" *ngIf="showSearchDashboard">
-	<div class="grid" fixed>
-		<div class="row">
-			<div class="col" col-5>
+	<div class="dash-body" >
+		<div class="sidebar">
 				<app-search-sidebar></app-search-sidebar>
-			</div>
-			<div class="col" col-7>
-				<app-search-body [searchResult]="searchSVC.searchResult"></app-search-body>
-			</div>
-		</div>
+		</div>	
+		<div class="sidebar-body" >
+				<app-search-body [searchResult]="searchSVC.searchResult" ></app-search-body>
+		</div>	
 	</div>
 </div>

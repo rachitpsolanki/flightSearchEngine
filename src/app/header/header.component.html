@@ -1,14 +1,27 @@
 <div class="app-header-body" id="app-header-body">
 	<div class="grid">
-		<div class="row" >
-			<app-input-autocomplete class="row-search-items" placeholder="Source" [autocomplete]="airports" [value]="searchForm.source" (inputChange)="searchForm.source=$event" ></app-input-autocomplete>
-			<app-input-autocomplete class="row-search-items"  placeholder="Destination" [autocomplete]="airports" [value]="searchForm.destination" (inputChange)="searchForm.destination=$event" ></app-input-autocomplete>
-			<input type="date"   class="row-search-items" name="" [(ngModel)]="searchForm.departure_date" placeholder="">
-			<button type="submit"  class="row-search-items" (click)="search()">Search</button>
+		<div class=" search-form ">
+			<div class="search-title">
+				{{quote}}
+				<br>
+				<small>Book with us.</small>
+			</div>
+			<div class="search-form-group">
+				<app-input-autocomplete class="form-item" placeholder="Source" [autocomplete]="airports" [value]="searchForm.source" (inputChange)="searchForm.source=$event" ></app-input-autocomplete>
+				<app-input-autocomplete class="form-item" placeholder="Destination" [autocomplete]="airports" [value]="searchForm.destination" (inputChange)="searchForm.destination=$event" ></app-input-autocomplete>
+				<div class="form-item">
+				<small class="placeholder">Date</small>
+				<input type="date"  name="" [(ngModel)]="searchForm.departure_date" placeholder="">
+			</div>
+				<button type="submit"  class="form-button" (click)="search()"><i class="material-icons">search</i></button>
+			</div>
 		</div>	
 	</div>
 </div>
 <div class="app-header">
-	<p no-margin class="header-title" (click)="reset()">Flight Search Engine</p>
+	<i class="material-icons logo" (click)="reset()">airplanemode_active</i>
+	<p no-margin class="header-title" (click)="reset()">flywithus.com</p>
+	<i class="material-icons user">account_circle</i>
+
 	<!-- <button type="" (click)="reset()" >Reset</button> -->
 </div>

@@ -1,16 +1,23 @@
 .autocomplete{
+	width: 100%;
 	position: absolute;
-	max-height: 100px;
+	max-height: 132px;
+	max-width: 200px;
 	background:white;
 	overflow: scroll;
-	border: 1px solid grey;
+	margin-top: 5px; 
 	z-index: 10;
+	border-radius: 5px;
 }
-input{
-	width: 100%;
-}
+
 .autocomplete>ul{
 	margin: 0px;
 	padding: 5px;
-
+	line-height: 44px;
+	color:#333;
+}
+.autocomplete>ul>small{
+	float: right;
+	font-weight: bold;
+	color:#666;
 }

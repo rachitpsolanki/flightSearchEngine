@@ -1,22 +1,21 @@
 <div class="app-search-sidebar">
 
-	<div class="row">
-		<app-input-autocomplete placeholder="Source" [autocomplete]="airports" [value]="searchForm.source" (inputChange)="searchForm.source=$event" ></app-input-autocomplete>
-	</div>
-	<div class="row">
-		<app-input-autocomplete placeholder="Destination" [autocomplete]="airports" [value]="searchForm.destination" (inputChange)="searchForm.destination=$event" ></app-input-autocomplete>
-	</div>
-	<div class="row">
+	<app-input-autocomplete placeholder="Source" [autocomplete]="airports" [value]="searchForm.source" (inputChange)="searchForm.source=$event" ></app-input-autocomplete>
+	<app-input-autocomplete placeholder="Destination" [autocomplete]="airports" [value]="searchForm.destination" (inputChange)="searchForm.destination=$event" ></app-input-autocomplete>
+	<div class="form-input" >
+		<small class="placeholder">Date</small>
 		<input type="date" name="" [(ngModel)]="searchForm.departure_date" placeholder="">
 	</div>
-	<div class="row"> Do you want to book a return?</div>
-	<div class="row">
+	<div class="form-input" >
+		<small class="placeholder">Number of Passengers</small>
+		<input type="number" name="" [(ngModel)]="searchForm.no_of_passengers">
+	</div>
+	<div class="form-input" >
+		<p style="color:white">Do you want to book a return?</p>
+		<small class="placeholder">Return Date</small>
 		<input type="date" name=""  [(ngModel)]="searchForm.return_date "placeholder="">
 	</div>
-	<div class="row">
-		<input type="number" name="" [(ngModel)]="searchForm.no_of_passengers" placeholder="Passenger">
-	</div>
-	<button type="submit" (click)="search()">Search</button>
+	<button type="submit" (click)="search()" class="form-button">Search</button>
 
 	<app-filter [min]="min" [max]="max" (valueChanged)="valueChanged($event)"></app-filter>
 </div>

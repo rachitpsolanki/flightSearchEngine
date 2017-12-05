@@ -1,5 +1,47 @@
 .app-search-item{
-	height: 100px;
+	padding: 5px;
 	border:1px solid #eee;
 	margin: 5px;
+	border-top:3px solid 	#eee;
+
+}
+.item-header{
+	padding: 5px;
+	display: inline;
+}
+.item-header>.flight-op-name{
+	float: left;
+	color: #99dccb;
+}
+.item-header>.price{
+	float: right;
+	margin: 0px;
+	color: #ae0051;
+}
+.src-des{
+	width: 100%;
+	text-align: center;
+	font-size: 10px;
+}
+.details{
+	display: flex;
+	padding: 5px
+}
+.details>.dep-time{
+	width: 100%;
+}
+.details>.stops{
+	width: 100%;
+	text-align: center;
+}
+.details>.arr-time{
+	width: 100%;
+	text-align: right;
+}
+.accordion{
+	display: flex;
+	width: 100%;
+	text-align: right;
+	color:#ccc;
+	line-height: 20px;
 }

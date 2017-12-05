@@ -12,7 +12,7 @@ export class SearchSidebarComponent implements OnInit {
   searchForm;
   min;
   max;
-
+  fare;
   constructor(private searchSVC:SearchService) {}  
 
   ngOnInit() {
@@ -23,14 +23,20 @@ export class SearchSidebarComponent implements OnInit {
   }
 
   valueChanged(e){
+    this.fare=e;
     this.searchSVC.fareFilter(e);
     this.ngOnInit();
     
   }
 
   search(){
-    this.searchSVC.getFlights();
-    this.ngOnInit();
+    if(this.searchSVC.searchForm.source && this.searchSVC.searchForm.destination && this.searchSVC.searchForm.departure_date){
+      this.searchSVC.getFlights();
+      this.ngOnInit();
+      if(this.fare){
+        this.searchSVC.fareFilter(this.fare);
+      }
+    }
   }
 
   captureEvent(e){

@@ -1,4 +1,8 @@
-<input type="text" [placeholder]="placeholder" [(ngModel)]="input" (ngModelChange)="valueChanged()" (focus)="onFocus()" (blur)="onBlur()">
+<small class="placeholder">{{placeholder}}</small>
+<input type="text" [(ngModel)]="input" (ngModelChange)="valueChanged()" (focus)="onFocus()" (blur)="onBlur()">
 <div class="autocomplete" *ngIf="showAutocomplete">
-	<ul *ngFor="let item of autocompleteList" (click)="select(item)">{{item.airport}} | {{item.airport_code}}</ul>
+	<ul *ngFor="let item of autocompleteList" (click)="select(item)">{{item.airport}} 
+		<small>
+		{{item.airport_code}}
+	</small></ul>
 </div>

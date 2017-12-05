@@ -1,10 +1,22 @@
 <div class="app-search-body"> 
-	<div class="row">
-		<div col> 
+	<div class="flights">
+		<div class="single" *ngIf="searchResult.single"> 
+			<div class="title oneway">{{searchResult.src}} to {{searchResult.dest}}</div>
 			<app-search-item *ngFor="let single of searchResult.single" [flight]="single"></app-search-item>	
+			<div *ngIf="searchResult.single.length==0" class="title">
+				<i class="material-icons">airplanemode_inactive</i>
+				<br>
+				No FLights Available
+			</div>
 		</div>
-		<div col>
-			<app-search-item *ngFor="let return of searchResult.return" [flight]="return"></app-search-item>
+		<div class="single" *ngIf="searchResult.return"> 
+			<div class="title return">{{searchResult.dest}} to {{searchResult.src}}</div>
+			<app-search-item *ngFor="let return of searchResult.return" [flight]="return"></app-search-item>	
+			<div *ngIf="searchResult.return.length==0" class="title">
+				<i class="material-icons">airplanemode_inactive</i>
+				<br>
+				No FLights Available
+			</div>
 		</div>
 	</div>
 </div>

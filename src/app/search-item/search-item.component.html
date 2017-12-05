@@ -1,5 +1,18 @@
 <div class="app-search-item">
-	<p>{{flight.airline}}</p>
-	<p>{{flight.source_airport}} to {{flight.destination_airport}}</p>
-	<p>{{flight.price}}</p>
+	<div class="item-header">
+		<small class="flight-op-name">{{flight.airline}}</small>
+		<p class="price">Rs.{{flight.price}}</p>
+	</div>
+	<p class="src-des">{{flight.source_airport}} to {{flight.destination_airport}}</p>
+	<div class="details">
+		<small class="dep-time">Departure</small>
+		<small class="stops">Stops</small>
+		<small class="arr-time">Arrival</small>
+	</div>
+	<div class="details">
+		<small class="dep-time">10:00am</small>
+		<small class="stops">0</small>
+		<small class="arr-time">12:00pm</small>
+	</div>
+	<div class="accordion"><i class="material-icons">keyboard_arrow_down</i><small>Details</small></div>
 </div>

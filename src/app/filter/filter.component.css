@@ -10,14 +10,17 @@
     transition: opacity .2s;
     padding: 0px;
 }
+#slidecontainer{
+    margin-top: 10px;
 
+}
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
     height: 25px;
     border-radius: 50%; 
-    background: #4CAF50;
+    background:     #f15f6c;
     cursor: pointer;
 }
 
@@ -25,6 +28,14 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    background: #4CAF50;
+    background:     #f15f6c;
     cursor: pointer;
+}
+.min{
+    float: left;
+    color: white;
+}
+.max{
+    float: right;
+    color: white;
 }

@@ -1,6 +1,18 @@
 .app-search-sidebar{
-	border: 1px solid #eee;
 	position: sticky;
 	position: -webkit-sticky;
-	top:56px;
+	top:0px;
+	background-color: 	#368f9b;
+	padding: 20px;
+}
+.form-button{
+    height: 44px;
+    width: 100%;
+    color: white;
+    background-color: #ae0051;
+    font-size: 16px;
+    padding: 5px;
+    margin-top: 13px;
+    border: none;
+    border-radius: 5px;
 }
